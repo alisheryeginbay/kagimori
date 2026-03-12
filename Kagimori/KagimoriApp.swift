@@ -5,7 +5,7 @@ import SwiftUI
 struct KagimoriApp: App {
     var body: some Scene {
         WindowGroup {
-            AccountListView()
+            ContentView()
         }
         .modelContainer(for: OTPAccount.self)
     }

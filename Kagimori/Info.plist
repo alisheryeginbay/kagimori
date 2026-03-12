@@ -4,5 +4,23 @@
 <dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Kagimori needs camera access to scan QR codes for adding two-factor authentication accounts.</string>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.json</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>com.twofas.backup</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>2fas</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

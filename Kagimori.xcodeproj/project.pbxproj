@@ -15,6 +15,7 @@
 		69D3B3EC7892BBD68A0FA46D /* OTPAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12813917E40968DD6C63CC17 /* OTPAccount.swift */; };
 		7C036D9453C47D2C654F3DBB /* Base32.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9690D66576FB7B30D4D6995 /* Base32.swift */; };
 		7C1295232ED1239E70436996 /* ManualEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85EBBDE31DBA2675B80921C /* ManualEntryView.swift */; };
+		8807C179EF2698196555C8C6 /* TwoFASImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB4406FB02291C647BAA4F /* TwoFASImporter.swift */; };
 		94C5696E08E9C2B40FFBF64A /* OTPAuthURI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D55E8C4B0FA6CCE45E56CD /* OTPAuthURI.swift */; };
 		D14875FBCA006456B1CC54F0 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB33FFF9A665B97FC1AC13 /* KeychainService.swift */; };
 		D3427CF1121F52EFCF4C3DE1 /* AddAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03252B97D51038F6FFC20825 /* AddAccountView.swift */; };
@@ -33,6 +34,7 @@
 		8BF159AF40583B99F526FBE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B9690D66576FB7B30D4D6995 /* Base32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base32.swift; sourceTree = "<group>"; };
 		C9D55E8C4B0FA6CCE45E56CD /* OTPAuthURI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPAuthURI.swift; sourceTree = "<group>"; };
+		CBEB4406FB02291C647BAA4F /* TwoFASImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFASImporter.swift; sourceTree = "<group>"; };
 		E3956F2EA12DB7EB823E7CC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4CAB9056C9085D340C217F0 /* Kagimori.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer; path = Kagimori.icon; sourceTree = SOURCE_ROOT; };
 		E85EBBDE31DBA2675B80921C /* ManualEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualEntryView.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 			children = (
 				B9690D66576FB7B30D4D6995 /* Base32.swift */,
 				5DBB33FFF9A665B97FC1AC13 /* KeychainService.swift */,
+				CBEB4406FB02291C647BAA4F /* TwoFASImporter.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				94C5696E08E9C2B40FFBF64A /* OTPAuthURI.swift in Sources */,
 				347AC9C25139AD9564041BEB /* QRScannerView.swift in Sources */,
 				FA4AD9DB882C64CE647C9248 /* TOTPGenerator.swift in Sources */,
+				8807C179EF2698196555C8C6 /* TwoFASImporter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

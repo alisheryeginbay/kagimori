@@ -27,7 +27,7 @@ struct AccountListView: View {
                     }
                 }
             }
-            .navigationTitle("Kagimori")
+            .navigationTitle("Codes")
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button {

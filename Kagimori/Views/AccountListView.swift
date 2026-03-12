@@ -97,11 +97,11 @@ struct AccountListView: View {
         UIPasteboard.general.string = code
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
 
-        withAnimation {
+        withAnimation(.easeInOut(duration: 0.15)) {
             copiedAccountID = account.id
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            withAnimation {
+            withAnimation(.easeInOut(duration: 0.15)) {
                 if copiedAccountID == account.id {
                     copiedAccountID = nil
                 }

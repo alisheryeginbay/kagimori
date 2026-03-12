@@ -33,6 +33,8 @@ struct CodeCardView: View {
 
     var body: some View {
         HStack(spacing: 16) {
+            IssuerIconView(issuer: account.issuer)
+
             VStack(alignment: .leading, spacing: 4) {
                 Text(account.issuer)
                     .font(.subheadline.weight(.semibold))

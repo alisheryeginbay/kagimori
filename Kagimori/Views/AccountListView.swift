@@ -14,6 +14,7 @@ struct AccountListView: View {
     @Query(sort: \OTPAccount.createdAt) private var accounts: [OTPAccount]
     @State private var showingAddSheet = false
     @State private var copiedAccountID: UUID?
+    @State private var copyGeneration = 0
 
     var body: some View {
         NavigationStack {
@@ -97,12 +98,14 @@ struct AccountListView: View {
         UIPasteboard.general.string = code
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
 
+        copyGeneration += 1
+        let expectedGeneration = copyGeneration
         withAnimation(.easeInOut(duration: 0.15)) {
             copiedAccountID = account.id
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             withAnimation(.easeInOut(duration: 0.15)) {
-                if copiedAccountID == account.id {
+                if copyGeneration == expectedGeneration {
                     copiedAccountID = nil
                 }
             }

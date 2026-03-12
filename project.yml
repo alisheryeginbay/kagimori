@@ -1,0 +1,35 @@
+name: Kagimori
+options:
+  bundleIdPrefix: com.kagimori
+  deploymentTarget:
+    iOS: "26.0"
+  xcodeVersion: "26.0"
+  postGenCommand: sed -i '' 's/lastKnownFileType = folder; path = Kagimori.icon/lastKnownFileType = folder.iconcomposer; path = Kagimori.icon/' Kagimori.xcodeproj/project.pbxproj
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+
+targets:
+  Kagimori:
+    type: application
+    platform: iOS
+    sources:
+      - Kagimori
+      - path: Kagimori.icon
+        type: folder
+    settings:
+      base:
+        DEVELOPMENT_TEAM: 84QSJK68P2
+        CODE_SIGN_STYLE: Automatic
+        PRODUCT_BUNDLE_IDENTIFIER: com.kagimori.app
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: 1
+        GENERATE_INFOPLIST_FILE: true
+        INFOPLIST_FILE: Kagimori/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: Kagimori
+        INFOPLIST_KEY_CFBundleDisplayName: Kagimori
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+        INFOPLIST_KEY_UILaunchScreen_Generation: true
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"

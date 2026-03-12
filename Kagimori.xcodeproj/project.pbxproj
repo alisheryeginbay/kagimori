@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		087F6F5F9CBBA9261AC3C365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3956F2EA12DB7EB823E7CC2 /* Assets.xcassets */; };
+		14EAA8689F306CA476CB8FFF /* AccountListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0274814B8149371E1BC6EAF8 /* AccountListView.swift */; };
+		1F63C126BFDFA6BB8336EC6C /* KagimoriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B69521909E2FFB432A0C41 /* KagimoriApp.swift */; };
+		347AC9C25139AD9564041BEB /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1AD25A15A9817A3F523F03 /* QRScannerView.swift */; };
+		5A52B729D545B4A461A07529 /* CodeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34797532CFAB0769589D524 /* CodeCardView.swift */; };
+		69D3B3EC7892BBD68A0FA46D /* OTPAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12813917E40968DD6C63CC17 /* OTPAccount.swift */; };
+		7C036D9453C47D2C654F3DBB /* Base32.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9690D66576FB7B30D4D6995 /* Base32.swift */; };
+		7C1295232ED1239E70436996 /* ManualEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85EBBDE31DBA2675B80921C /* ManualEntryView.swift */; };
+		94C5696E08E9C2B40FFBF64A /* OTPAuthURI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D55E8C4B0FA6CCE45E56CD /* OTPAuthURI.swift */; };
+		D14875FBCA006456B1CC54F0 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB33FFF9A665B97FC1AC13 /* KeychainService.swift */; };
+		D3427CF1121F52EFCF4C3DE1 /* AddAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03252B97D51038F6FFC20825 /* AddAccountView.swift */; };
+		EB7FCC5F818A2AA7825EF356 /* Kagimori.icon in Resources */ = {isa = PBXBuildFile; fileRef = E4CAB9056C9085D340C217F0 /* Kagimori.icon */; };
+		FA4AD9DB882C64CE647C9248 /* TOTPGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528608F4DDBB086EAB8E767 /* TOTPGenerator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0274814B8149371E1BC6EAF8 /* AccountListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListView.swift; sourceTree = "<group>"; };
+		03252B97D51038F6FFC20825 /* AddAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountView.swift; sourceTree = "<group>"; };
+		0F1AD25A15A9817A3F523F03 /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
+		12813917E40968DD6C63CC17 /* OTPAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPAccount.swift; sourceTree = "<group>"; };
+		5DBB33FFF9A665B97FC1AC13 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		6528608F4DDBB086EAB8E767 /* TOTPGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPGenerator.swift; sourceTree = "<group>"; };
+		87B69521909E2FFB432A0C41 /* KagimoriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KagimoriApp.swift; sourceTree = "<group>"; };
+		8BF159AF40583B99F526FBE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B9690D66576FB7B30D4D6995 /* Base32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base32.swift; sourceTree = "<group>"; };
+		C9D55E8C4B0FA6CCE45E56CD /* OTPAuthURI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPAuthURI.swift; sourceTree = "<group>"; };
+		E3956F2EA12DB7EB823E7CC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E4CAB9056C9085D340C217F0 /* Kagimori.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer; path = Kagimori.icon; sourceTree = SOURCE_ROOT; };
+		E85EBBDE31DBA2675B80921C /* ManualEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualEntryView.swift; sourceTree = "<group>"; };
+		F34797532CFAB0769589D524 /* CodeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCardView.swift; sourceTree = "<group>"; };
+		F4A7A919909ACDFB99B95FFA /* Kagimori.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Kagimori.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		3AAC0F4EB74088304CDA4C0F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B9690D66576FB7B30D4D6995 /* Base32.swift */,
+				5DBB33FFF9A665B97FC1AC13 /* KeychainService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		86D2AA83F573486147D3AC1F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4A7A919909ACDFB99B95FFA /* Kagimori.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		90E29243DCD8254AC4E1DB3A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0274814B8149371E1BC6EAF8 /* AccountListView.swift */,
+				03252B97D51038F6FFC20825 /* AddAccountView.swift */,
+				F34797532CFAB0769589D524 /* CodeCardView.swift */,
+				E85EBBDE31DBA2675B80921C /* ManualEntryView.swift */,
+				0F1AD25A15A9817A3F523F03 /* QRScannerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		96DA87FF9160E15D90B876BD /* Kagimori */ = {
+			isa = PBXGroup;
+			children = (
+				E3956F2EA12DB7EB823E7CC2 /* Assets.xcassets */,
+				8BF159AF40583B99F526FBE1 /* Info.plist */,
+				87B69521909E2FFB432A0C41 /* KagimoriApp.swift */,
+				BE66D30687FBB698E7D778CE /* Models */,
+				3AAC0F4EB74088304CDA4C0F /* Services */,
+				90E29243DCD8254AC4E1DB3A /* Views */,
+			);
+			path = Kagimori;
+			sourceTree = "<group>";
+		};
+		BE66D30687FBB698E7D778CE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				12813917E40968DD6C63CC17 /* OTPAccount.swift */,
+				C9D55E8C4B0FA6CCE45E56CD /* OTPAuthURI.swift */,
+				6528608F4DDBB086EAB8E767 /* TOTPGenerator.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E78078D8F21DE338BEDA5DC0 = {
+			isa = PBXGroup;
+			children = (
+				E4CAB9056C9085D340C217F0 /* Kagimori.icon */,
+				96DA87FF9160E15D90B876BD /* Kagimori */,
+				86D2AA83F573486147D3AC1F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		46F1715BD3815E91579B62A9 /* Kagimori */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DDF24BC9B3B64BCFF5C8BC4 /* Build configuration list for PBXNativeTarget "Kagimori" */;
+			buildPhases = (
+				A06DC6037E08E490D865C25E /* Sources */,
+				AFD741BC2BE384733C398651 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kagimori;
+			packageProductDependencies = (
+			);
+			productName = Kagimori;
+			productReference = F4A7A919909ACDFB99B95FFA /* Kagimori.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1FF2A81D8D8A346E955B1A01 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					46F1715BD3815E91579B62A9 = {
+						DevelopmentTeam = 84QSJK68P2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5F33778EF8CC24CA474308B3 /* Build configuration list for PBXProject "Kagimori" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = E78078D8F21DE338BEDA5DC0;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				46F1715BD3815E91579B62A9 /* Kagimori */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AFD741BC2BE384733C398651 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				087F6F5F9CBBA9261AC3C365 /* Assets.xcassets in Resources */,
+				EB7FCC5F818A2AA7825EF356 /* Kagimori.icon in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A06DC6037E08E490D865C25E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14EAA8689F306CA476CB8FFF /* AccountListView.swift in Sources */,
+				D3427CF1121F52EFCF4C3DE1 /* AddAccountView.swift in Sources */,
+				7C036D9453C47D2C654F3DBB /* Base32.swift in Sources */,
+				5A52B729D545B4A461A07529 /* CodeCardView.swift in Sources */,
+				1F63C126BFDFA6BB8336EC6C /* KagimoriApp.swift in Sources */,
+				D14875FBCA006456B1CC54F0 /* KeychainService.swift in Sources */,
+				7C1295232ED1239E70436996 /* ManualEntryView.swift in Sources */,
+				69D3B3EC7892BBD68A0FA46D /* OTPAccount.swift in Sources */,
+				94C5696E08E9C2B40FFBF64A /* OTPAuthURI.swift in Sources */,
+				347AC9C25139AD9564041BEB /* QRScannerView.swift in Sources */,
+				FA4AD9DB882C64CE647C9248 /* TOTPGenerator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4E073044323A7DCD8FAD9274 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		5931CEDCE5F2DBAA82D7E319 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = Kagimori;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 84QSJK68P2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Kagimori/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Kagimori;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kagimori.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AAA5F4F84E2D49EFFEEBB762 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = Kagimori;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 84QSJK68P2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Kagimori/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Kagimori;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kagimori.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB18CDDFBACE8BBEA0475F41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2DDF24BC9B3B64BCFF5C8BC4 /* Build configuration list for PBXNativeTarget "Kagimori" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAA5F4F84E2D49EFFEEBB762 /* Debug */,
+				5931CEDCE5F2DBAA82D7E319 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5F33778EF8CC24CA474308B3 /* Build configuration list for PBXProject "Kagimori" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB18CDDFBACE8BBEA0475F41 /* Debug */,
+				4E073044323A7DCD8FAD9274 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1FF2A81D8D8A346E955B1A01 /* Project object */;
+}

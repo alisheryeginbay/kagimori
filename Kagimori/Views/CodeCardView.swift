@@ -63,6 +63,7 @@ struct CodeCardView: View {
             }
         }
         .padding()
+        .contentShape(.rect)
         .glassEffect(.regular.interactive(), in: .rect(cornerRadius: 20))
     }
 

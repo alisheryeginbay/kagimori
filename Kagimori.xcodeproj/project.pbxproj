@@ -311,7 +311,7 @@
 				DEVELOPMENT_TEAM = 84QSJK68P2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Kagimori/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Kagimori;
+				INFOPLIST_KEY_CFBundleDisplayName = "Kagimori Dev";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -321,7 +321,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kagimori.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kagimori.app.debug;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

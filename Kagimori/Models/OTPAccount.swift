@@ -9,13 +9,13 @@ enum OTPAlgorithm: String, Codable, CaseIterable, Sendable {
 
 @Model
 final class OTPAccount {
-    var id: UUID
-    var issuer: String
-    var accountName: String
-    var algorithm: OTPAlgorithm
-    var digits: Int
-    var period: Int
-    var createdAt: Date
+    var id: UUID = UUID()
+    var issuer: String = ""
+    var accountName: String = ""
+    var algorithm: OTPAlgorithm = OTPAlgorithm.sha1
+    var digits: Int = 6
+    var period: Int = 30
+    var createdAt: Date = Date.now
 
     var keychainKey: String {
         "kagimori.otp.\(id.uuidString)"

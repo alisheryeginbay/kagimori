@@ -41,6 +41,7 @@
 		8BF159AF40583B99F526FBE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A2A457DB780E60FC8657FE5A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A311B49726C22326E1E6FDDE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A4AFCBB471935AD1AD37687F /* Kagimori.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kagimori.entitlements; sourceTree = "<group>"; };
 		B9690D66576FB7B30D4D6995 /* Base32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base32.swift; sourceTree = "<group>"; };
 		C9D55E8C4B0FA6CCE45E56CD /* OTPAuthURI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPAuthURI.swift; sourceTree = "<group>"; };
 		CBEB4406FB02291C647BAA4F /* TwoFASImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFASImporter.swift; sourceTree = "<group>"; };
@@ -93,6 +94,7 @@
 			children = (
 				E3956F2EA12DB7EB823E7CC2 /* Assets.xcassets */,
 				8BF159AF40583B99F526FBE1 /* Info.plist */,
+				A4AFCBB471935AD1AD37687F /* Kagimori.entitlements */,
 				87B69521909E2FFB432A0C41 /* KagimoriApp.swift */,
 				BE66D30687FBB698E7D778CE /* Models */,
 				3AAC0F4EB74088304CDA4C0F /* Services */,
@@ -275,6 +277,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Kagimori;
+				CODE_SIGN_ENTITLEMENTS = Kagimori/Kagimori.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -301,6 +304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Kagimori;
+				CODE_SIGN_ENTITLEMENTS = Kagimori/Kagimori.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

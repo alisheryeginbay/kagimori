@@ -14,7 +14,8 @@ enum KeychainService {
             kSecAttrService as String: service,
             kSecAttrAccount as String: key,
             kSecValueData as String: data,
-            kSecAttrAccessible as String: kSecAttrAccessibleWhenUnlockedThisDeviceOnly,
+            kSecAttrAccessible as String: kSecAttrAccessibleWhenUnlocked,
+            kSecAttrSynchronizable as String: true,
         ]
 
         return SecItemAdd(query as CFDictionary, nil) == errSecSuccess
@@ -27,6 +28,7 @@ enum KeychainService {
             kSecAttrAccount as String: key,
             kSecReturnData as String: true,
             kSecMatchLimit as String: kSecMatchLimitOne,
+            kSecAttrSynchronizable as String: kSecAttrSynchronizableAny,
         ]
 
         var result: AnyObject?
@@ -42,8 +44,15 @@ enum KeychainService {
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service,
             kSecAttrAccount as String: key,
+            kSecAttrSynchronizable as String: kSecAttrSynchronizableAny,
         ]
         let status = SecItemDelete(query as CFDictionary)
         return status == errSecSuccess || status == errSecItemNotFound
+    }
+
+    @discardableResult
+    static func migrateToSyncable(for key: String) -> Bool {
+        guard let secret = retrieve(for: key) else { return false }
+        return save(secret: secret, for: key)
     }
 }

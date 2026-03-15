@@ -15,6 +15,15 @@ struct AccountListView: View {
     @State private var showingAddSheet = false
     @State private var copiedAccountID: UUID?
     @State private var copyGeneration = 0
+    @State private var searchText = ""
+
+    private var filteredAccounts: [OTPAccount] {
+        guard !searchText.isEmpty else { return accounts }
+        return accounts.filter { account in
+            account.issuer.localizedCaseInsensitiveContains(searchText)
+                || account.accountName.localizedCaseInsensitiveContains(searchText)
+        }
+    }
 
     var body: some View {
         NavigationStack {
@@ -22,10 +31,13 @@ struct AccountListView: View {
                 Group {
                     if accounts.isEmpty {
                         emptyState
+                    } else if filteredAccounts.isEmpty {
+                        ContentUnavailableView.search
                     } else {
                         accountList(date: context.date)
                     }
                 }
+                .searchable(text: $searchText, prompt: "Search accounts")
             }
             .navigationTitle("Codes")
             .toolbar {
@@ -46,7 +58,7 @@ struct AccountListView: View {
     private func accountList(date: Date) -> some View {
         ScrollView {
             LazyVStack(spacing: 16) {
-                ForEach(accounts) { account in
+                ForEach(filteredAccounts) { account in
                     CodeCardView(
                         account: account,
                         date: date,

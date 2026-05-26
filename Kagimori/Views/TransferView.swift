@@ -6,11 +6,17 @@ struct TransferView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var showingFileImporter = false
     @State private var importAlert: ImportAlert?
+    @State private var exportItem: ExportItem?
 
     private struct ImportAlert: Identifiable {
         let id = UUID()
         let title: String
         let message: String
+    }
+
+    private struct ExportItem: Identifiable {
+        let id = UUID()
+        let url: URL
     }
 
     var body: some View {
@@ -32,6 +38,17 @@ struct TransferView: View {
             } footer: {
                 Text("Select a backup file exported from your previous authenticator app.")
             }
+            Section {
+                Button {
+                    exportBackup()
+                } label: {
+                    Label("Export Backup", systemImage: "square.and.arrow.up")
+                }
+            } header: {
+                Text("Backup")
+            } footer: {
+                Text("Saves a 2FAS-format file containing your secrets. The file is unencrypted — store it somewhere safe.")
+            }
         }
         .navigationTitle("Transfer Accounts")
         .fileImporter(
@@ -46,6 +63,9 @@ struct TransferView: View {
                 message: Text(alert.message),
                 dismissButton: .default(Text("OK"))
             )
+        }
+        .sheet(item: $exportItem) { item in
+            ShareSheet(items: [item.url])
         }
     }
 
@@ -117,6 +137,33 @@ struct TransferView: View {
             }
         case .failure(let error):
             importAlert = ImportAlert(title: "Import Failed", message: error.localizedDescription)
+        }
+    }
+
+    private func exportBackup() {
+        let accounts = (try? modelContext.fetch(FetchDescriptor<OTPAccount>())) ?? []
+        let exportAccounts = accounts.compactMap { account -> TwoFASExporter.ExportAccount? in
+            guard let secret = KeychainService.retrieve(for: account.keychainKey) else { return nil }
+            return TwoFASExporter.ExportAccount(
+                issuer: account.issuer,
+                accountName: account.accountName,
+                secret: secret,
+                algorithm: account.algorithm,
+                digits: account.digits,
+                period: account.period
+            )
+        }
+        guard !exportAccounts.isEmpty else {
+            importAlert = ImportAlert(title: "Nothing to Export", message: "No accounts with a stored secret were found.")
+            return
+        }
+        do {
+            let data = try TwoFASExporter.makeBackup(from: exportAccounts)
+            let url = FileManager.default.temporaryDirectory.appendingPathComponent("kagimori-backup.2fas")
+            try data.write(to: url, options: .atomic)
+            exportItem = ExportItem(url: url)
+        } catch {
+            importAlert = ImportAlert(title: "Export Failed", message: error.localizedDescription)
         }
     }
 }

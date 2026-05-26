@@ -22,6 +22,7 @@
 		94C5696E08E9C2B40FFBF64A /* OTPAuthURI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D55E8C4B0FA6CCE45E56CD /* OTPAuthURI.swift */; };
 		A0078706F5E6E27424CB64FC /* ImportPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BA38E4032D904C6C93393B /* ImportPlanner.swift */; };
 		A1BFAB23741ABC4D0CD5ED8E /* IssuerIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591A6E619F74A40ACB6E1907 /* IssuerIconView.swift */; };
+		C8EBE41B0BE9EFD1561E2287 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86BD51BABFBB73397CCB82 /* ShareSheet.swift */; };
 		CE00725E70A909E2738FECD2 /* Base32Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCB07F8059CD44593A5F0B /* Base32Tests.swift */; };
 		D14875FBCA006456B1CC54F0 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB33FFF9A665B97FC1AC13 /* KeychainService.swift */; };
 		D165D058F668E38950F1FD32 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311B49726C22326E1E6FDDE /* ContentView.swift */; };
@@ -54,6 +55,7 @@
 		53BA38E4032D904C6C93393B /* ImportPlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportPlanner.swift; sourceTree = "<group>"; };
 		591A6E619F74A40ACB6E1907 /* IssuerIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuerIconView.swift; sourceTree = "<group>"; };
 		5A22B93755D7FC6B21E1B331 /* TwoFASExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFASExporter.swift; sourceTree = "<group>"; };
+		5B86BD51BABFBB73397CCB82 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		5DBB33FFF9A665B97FC1AC13 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		6528608F4DDBB086EAB8E767 /* TOTPGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPGenerator.swift; sourceTree = "<group>"; };
 		87B69521909E2FFB432A0C41 /* KagimoriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KagimoriApp.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				E85EBBDE31DBA2675B80921C /* ManualEntryView.swift */,
 				0F1AD25A15A9817A3F523F03 /* QRScannerView.swift */,
 				A2A457DB780E60FC8657FE5A /* SettingsView.swift */,
+				5B86BD51BABFBB73397CCB82 /* ShareSheet.swift */,
 				DF60E02C7AA59AE57C8F929B /* TransferView.swift */,
 			);
 			path = Views;
@@ -277,6 +280,7 @@
 				94C5696E08E9C2B40FFBF64A /* OTPAuthURI.swift in Sources */,
 				347AC9C25139AD9564041BEB /* QRScannerView.swift in Sources */,
 				3EA844F7144A73B684379E10 /* SettingsView.swift in Sources */,
+				C8EBE41B0BE9EFD1561E2287 /* ShareSheet.swift in Sources */,
 				FA4AD9DB882C64CE647C9248 /* TOTPGenerator.swift in Sources */,
 				E2A5478DEC4309CFB71E7143 /* TransferView.swift in Sources */,
 				EECEA3533EED180D76F55616 /* TwoFASExporter.swift in Sources */,

@@ -38,3 +38,20 @@ targets:
         Debug:
           PRODUCT_BUNDLE_IDENTIFIER: com.kagimori.app.debug
           INFOPLIST_KEY_CFBundleDisplayName: "Kagimori Dev"
+    scheme:
+      testTargets:
+        - KagimoriTests
+
+  KagimoriTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - KagimoriTests
+    dependencies:
+      - target: Kagimori
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: true
+        PRODUCT_BUNDLE_IDENTIFIER: com.kagimori.app.tests
+        DEVELOPMENT_TEAM: 84QSJK68P2
+        CODE_SIGN_STYLE: Automatic

@@ -20,10 +20,19 @@ list_devices() {
 write_setup() {
   local udid="${UDID:-}"
   if [[ -z "$udid" ]]; then
-    read -r -p "Enter your iPhone UDID (see 'make devices'): " udid
+    if [[ -t 0 ]]; then
+      read -r -p "Enter your iPhone UDID (see 'make devices'): " udid
+    else
+      echo "No UDID provided and stdin is not a terminal. Use: UDID=<udid> make setup" >&2
+      exit 1
+    fi
   fi
   if [[ -z "$udid" ]]; then
     echo "No UDID provided." >&2
+    exit 1
+  fi
+  if [[ ! "$udid" =~ ^[0-9A-Za-z-]+$ ]]; then
+    echo "UDID looks wrong (expected alphanumeric with hyphens): '$udid'" >&2
     exit 1
   fi
   printf 'DEVICE_UDID=%s\n' "$udid" > "$ENV_FILE"
@@ -35,8 +44,7 @@ require_device() {
     echo "No device configured. Run 'make devices' then 'make setup'." >&2
     exit 1
   fi
-  # shellcheck source=/dev/null
-  source "$ENV_FILE"
+  DEVICE_UDID="$(grep -E '^DEVICE_UDID=' "$ENV_FILE" | tail -n1 | cut -d= -f2- | tr -d '"')"
   if [[ -z "${DEVICE_UDID:-}" ]]; then
     echo "DEVICE_UDID missing/empty in $ENV_FILE. Run 'make setup'." >&2
     exit 1
@@ -66,7 +74,10 @@ build_and_install() {
   fi
 
   echo "==> Installing to device $DEVICE_UDID"
-  xcrun devicectl device install app --device "$DEVICE_UDID" "$app_path"
+  if ! xcrun devicectl device install app --device "$DEVICE_UDID" "$app_path"; then
+    echo "Install failed. Check that the device is unlocked, on Wi-Fi, and paired in Xcode." >&2
+    exit 1
+  fi
   echo "==> Done: $config installed."
 }
 

@@ -38,6 +38,7 @@ targets:
         Debug:
           PRODUCT_BUNDLE_IDENTIFIER: com.kagimori.app.debug
           INFOPLIST_KEY_CFBundleDisplayName: "Kagimori Dev"
+          CODE_SIGN_ENTITLEMENTS: Kagimori/Kagimori.debug.entitlements
     scheme:
       testTargets:
         - KagimoriTests

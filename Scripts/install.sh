@@ -43,6 +43,33 @@ require_device() {
   fi
 }
 
+build_and_install() {
+  local config="$1"   # Debug | Release
+  require_device
+
+  echo "==> Regenerating project"
+  xcodegen generate
+
+  echo "==> Building $config for device"
+  xcodebuild \
+    -project Kagimori.xcodeproj \
+    -scheme "$SCHEME" \
+    -configuration "$config" \
+    -destination 'generic/platform=iOS' \
+    -derivedDataPath "$DERIVED_DATA" \
+    build
+
+  local app_path="$DERIVED_DATA/Build/Products/${config}-iphoneos/${SCHEME}.app"
+  if [[ ! -d "$app_path" ]]; then
+    echo "Built app not found at: $app_path" >&2
+    exit 1
+  fi
+
+  echo "==> Installing to device $DEVICE_UDID"
+  xcrun devicectl device install app --device "$DEVICE_UDID" "$app_path"
+  echo "==> Done: $config installed."
+}
+
 usage() {
   echo "Usage: $0 {devices|setup|Debug|Release}" >&2
   exit 2
@@ -52,5 +79,6 @@ cmd="${1:-}"
 case "$cmd" in
   devices) list_devices ;;
   setup) write_setup ;;
+  Debug|Release) build_and_install "$cmd" ;;
   *) usage ;;
 esac

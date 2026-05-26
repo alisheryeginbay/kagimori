@@ -16,13 +16,6 @@ struct KagimoriApp: App {
         } catch {
             fatalError("Failed to configure SwiftData: \(error)")
         }
-
-        let context = ModelContext(modelContainer)
-        if let accounts = try? context.fetch(FetchDescriptor<OTPAccount>()) {
-            for account in accounts {
-                KeychainService.migrateToSyncable(for: account.keychainKey)
-            }
-        }
     }
 
     var body: some Scene {

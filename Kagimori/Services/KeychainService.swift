@@ -61,12 +61,6 @@ enum KeychainService {
         return status == errSecSuccess || status == errSecItemNotFound
     }
 
-    @discardableResult
-    static func migrateToSyncable(for key: String) -> Bool {
-        guard let secret = retrieve(for: key) else { return false }
-        return save(secret: secret, for: key)
-    }
-
     // MARK: - Diagnostics (temporary)
 
     /// Probes the keychain for `key` across synchronizability scopes and reports

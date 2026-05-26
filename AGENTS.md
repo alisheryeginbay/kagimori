@@ -23,6 +23,21 @@ xcodebuild -project Kagimori.xcodeproj -scheme Kagimori -sdk iphonesimulator -de
 
 There are no tests, linters, or formatters configured yet.
 
+### Installing to a physical device
+
+Build and install onto a paired iPhone (dev and prod side-by-side):
+
+```bash
+make devices   # first time: list paired devices, copy your iPhone's UDID
+make setup     # first time: save the UDID to .install.env (git-ignored)
+make dev       # Debug build  -> com.kagimori.app.debug ("Kagimori Dev")
+make prod      # Release build -> com.kagimori.app ("Kagimori")
+make both      # dev then prod
+```
+
+Pair the phone over Wi-Fi once in Xcode (Devices & Simulators) so no cable is
+needed. Builds are signed Automatic with team `84QSJK68P2` and remain valid ~1 year.
+
 ## Architecture
 
 **Data flow**: Secrets are stored in Keychain (never in SwiftData). Account metadata (issuer, name, algorithm, digits, period) is persisted via SwiftData `@Model`. The `keychainKey` on `OTPAccount` links the two.

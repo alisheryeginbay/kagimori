@@ -4,7 +4,6 @@ import Security
 enum KeychainService {
     private static let service = "com.kagimori.otp"
 
-    @discardableResult
     static func save(secret: String, for key: String) -> Bool {
         guard let data = secret.data(using: .utf8) else { return false }
 

@@ -65,21 +65,53 @@ struct TransferView: View {
                     importAlert = ImportAlert(title: "No Accounts Found", message: "The file contained no TOTP accounts to import.")
                     return
                 }
-                for account in parsed {
-                    let otp = OTPAccount(
+
+                let existingAccounts = (try? modelContext.fetch(FetchDescriptor<OTPAccount>())) ?? []
+                let snapshot = existingAccounts.map { account in
+                    ImportPlanner.ExistingAccount(
+                        keychainKey: account.keychainKey,
                         issuer: account.issuer,
                         accountName: account.accountName,
-                        algorithm: account.algorithm,
-                        digits: account.digits,
-                        period: account.period
+                        secret: KeychainService.retrieve(for: account.keychainKey)
                     )
-                    KeychainService.save(secret: account.secret, for: otp.keychainKey)
-                    modelContext.insert(otp)
                 }
-                importAlert = ImportAlert(
-                    title: "Import Successful",
-                    message: "Imported \(parsed.count) account\(parsed.count == 1 ? "" : "s")."
-                )
+
+                var added = 0, restored = 0, skipped = 0, failed = 0
+                for entry in parsed {
+                    switch ImportPlanner.action(
+                        forSecret: entry.secret,
+                        issuer: entry.issuer,
+                        accountName: entry.accountName,
+                        existing: snapshot
+                    ) {
+                    case .skip:
+                        skipped += 1
+                    case .restore(let keychainKey):
+                        if KeychainService.save(secret: entry.secret, for: keychainKey) {
+                            restored += 1
+                        } else {
+                            failed += 1
+                        }
+                    case .add:
+                        let otp = OTPAccount(
+                            issuer: entry.issuer,
+                            accountName: entry.accountName,
+                            algorithm: entry.algorithm,
+                            digits: entry.digits,
+                            period: entry.period
+                        )
+                        if KeychainService.save(secret: entry.secret, for: otp.keychainKey) {
+                            modelContext.insert(otp)
+                            added += 1
+                        } else {
+                            failed += 1
+                        }
+                    }
+                }
+
+                var lines = ["Added \(added)", "restored \(restored)", "skipped \(skipped)"]
+                if failed > 0 { lines.append("failed \(failed)") }
+                importAlert = ImportAlert(title: "Import Complete", message: lines.joined(separator: ", ") + ".")
             } catch {
                 importAlert = ImportAlert(title: "Import Failed", message: error.localizedDescription)
             }

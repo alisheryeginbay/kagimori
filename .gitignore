@@ -13,3 +13,7 @@ build/
 
 # OS
 .DS_Store
+
+# Device install automation
+.install.env
+.build/

@@ -11,6 +11,7 @@
 		087F6F5F9CBBA9261AC3C365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3956F2EA12DB7EB823E7CC2 /* Assets.xcassets */; };
 		14EAA8689F306CA476CB8FFF /* AccountListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0274814B8149371E1BC6EAF8 /* AccountListView.swift */; };
 		1F63C126BFDFA6BB8336EC6C /* KagimoriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B69521909E2FFB432A0C41 /* KagimoriApp.swift */; };
+		20C91D3680ECBB84545CA9BD /* ImportPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28649FEACFFAFFE6FD310884 /* ImportPlannerTests.swift */; };
 		347AC9C25139AD9564041BEB /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1AD25A15A9817A3F523F03 /* QRScannerView.swift */; };
 		3EA844F7144A73B684379E10 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A457DB780E60FC8657FE5A /* SettingsView.swift */; };
 		5A52B729D545B4A461A07529 /* CodeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34797532CFAB0769589D524 /* CodeCardView.swift */; };
@@ -19,6 +20,7 @@
 		7C1295232ED1239E70436996 /* ManualEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85EBBDE31DBA2675B80921C /* ManualEntryView.swift */; };
 		8807C179EF2698196555C8C6 /* TwoFASImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB4406FB02291C647BAA4F /* TwoFASImporter.swift */; };
 		94C5696E08E9C2B40FFBF64A /* OTPAuthURI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D55E8C4B0FA6CCE45E56CD /* OTPAuthURI.swift */; };
+		A0078706F5E6E27424CB64FC /* ImportPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BA38E4032D904C6C93393B /* ImportPlanner.swift */; };
 		A1BFAB23741ABC4D0CD5ED8E /* IssuerIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591A6E619F74A40ACB6E1907 /* IssuerIconView.swift */; };
 		CE00725E70A909E2738FECD2 /* Base32Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BCB07F8059CD44593A5F0B /* Base32Tests.swift */; };
 		D14875FBCA006456B1CC54F0 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB33FFF9A665B97FC1AC13 /* KeychainService.swift */; };
@@ -45,8 +47,10 @@
 		03252B97D51038F6FFC20825 /* AddAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountView.swift; sourceTree = "<group>"; };
 		0F1AD25A15A9817A3F523F03 /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
 		12813917E40968DD6C63CC17 /* OTPAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPAccount.swift; sourceTree = "<group>"; };
+		28649FEACFFAFFE6FD310884 /* ImportPlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportPlannerTests.swift; sourceTree = "<group>"; };
 		30F790BED2B63843A1DF9F3B /* IssuerIconService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuerIconService.swift; sourceTree = "<group>"; };
 		44BCB07F8059CD44593A5F0B /* Base32Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base32Tests.swift; sourceTree = "<group>"; };
+		53BA38E4032D904C6C93393B /* ImportPlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportPlanner.swift; sourceTree = "<group>"; };
 		591A6E619F74A40ACB6E1907 /* IssuerIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuerIconView.swift; sourceTree = "<group>"; };
 		5A22B93755D7FC6B21E1B331 /* TwoFASExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFASExporter.swift; sourceTree = "<group>"; };
 		5DBB33FFF9A665B97FC1AC13 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				B9690D66576FB7B30D4D6995 /* Base32.swift */,
+				53BA38E4032D904C6C93393B /* ImportPlanner.swift */,
 				30F790BED2B63843A1DF9F3B /* IssuerIconService.swift */,
 				5DBB33FFF9A665B97FC1AC13 /* KeychainService.swift */,
 				5A22B93755D7FC6B21E1B331 /* TwoFASExporter.swift */,
@@ -124,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				44BCB07F8059CD44593A5F0B /* Base32Tests.swift */,
+				28649FEACFFAFFE6FD310884 /* ImportPlannerTests.swift */,
 			);
 			path = KagimoriTests;
 			sourceTree = "<group>";
@@ -244,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE00725E70A909E2738FECD2 /* Base32Tests.swift in Sources */,
+				20C91D3680ECBB84545CA9BD /* ImportPlannerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +263,7 @@
 				7C036D9453C47D2C654F3DBB /* Base32.swift in Sources */,
 				5A52B729D545B4A461A07529 /* CodeCardView.swift in Sources */,
 				D165D058F668E38950F1FD32 /* ContentView.swift in Sources */,
+				A0078706F5E6E27424CB64FC /* ImportPlanner.swift in Sources */,
 				05425DA1722BDB58C91C3C93 /* IssuerIconService.swift in Sources */,
 				A1BFAB23741ABC4D0CD5ED8E /* IssuerIconView.swift in Sources */,
 				1F63C126BFDFA6BB8336EC6C /* KagimoriApp.swift in Sources */,

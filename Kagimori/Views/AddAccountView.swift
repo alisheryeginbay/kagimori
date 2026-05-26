@@ -5,6 +5,8 @@ struct AddAccountView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @State private var mode: EntryMode = .scan
+    @State private var showError = false
+    @State private var errorMessage = ""
 
     enum EntryMode: String, CaseIterable {
         case scan = "Scan QR"
@@ -40,6 +42,11 @@ struct AddAccountView: View {
                     Button("Cancel") { dismiss() }
                 }
             }
+            .alert("Add Failed", isPresented: $showError) {
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text(errorMessage)
+            }
         }
     }
 
@@ -51,7 +58,11 @@ struct AddAccountView: View {
             digits: parsed.digits,
             period: parsed.period
         )
-        KeychainService.save(secret: parsed.secret, for: account.keychainKey)
+        guard KeychainService.save(secret: parsed.secret, for: account.keychainKey) else {
+            errorMessage = "Couldn't save the secret securely. The account was not added."
+            showError = true
+            return
+        }
         modelContext.insert(account)
         dismiss()
     }

@@ -12,6 +12,8 @@ struct ManualEntryView: View {
     @State private var digits = 6
     @State private var period = 30
     @State private var showAdvanced = false
+    @State private var showError = false
+    @State private var errorMessage = ""
 
     private var isValid: Bool {
         !issuer.isEmpty
@@ -63,6 +65,11 @@ struct ManualEntryView: View {
                     .fontWeight(.semibold)
             }
         }
+        .alert("Add Failed", isPresented: $showError) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(errorMessage)
+        }
     }
 
     private func addAccount() {
@@ -77,7 +84,11 @@ struct ManualEntryView: View {
             digits: digits,
             period: period
         )
-        KeychainService.save(secret: cleanSecret, for: account.keychainKey)
+        guard KeychainService.save(secret: cleanSecret, for: account.keychainKey) else {
+            errorMessage = "Couldn't save the secret securely. The account was not added."
+            showError = true
+            return
+        }
         modelContext.insert(account)
         dismiss()
     }
